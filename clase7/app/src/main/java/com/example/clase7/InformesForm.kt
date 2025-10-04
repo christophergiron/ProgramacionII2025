@@ -56,7 +56,7 @@ fun InformeForm(navController: NavController){
         db.collection("informes")
             .add(informe)
             .addOnSuccessListener {
-                Toast.makeText(context, "Informe guardado correctamente", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, context.getString(R.string.Informe_screen_inf_save_success), Toast.LENGTH_SHORT).show()
                 navController.popBackStack()
             }
             .addOnFailureListener {
@@ -69,35 +69,35 @@ fun InformeForm(navController: NavController){
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Nuevo Informe", style = MaterialTheme.typography.titleLarge)
+        Text(context.getString(R.string.Informe_screen_inf_new_informe), style = MaterialTheme.typography.titleLarge)
 
         Spacer(modifier = Modifier.height(16.dp))
 
         OutlinedTextField(
             value = informe.curso,
             onValueChange = { informe = informe.copy(curso = it) },
-            label = { Text("Curso") },
+            label = { Text(context.getString(R.string.Informe_screen_inf_course)) },
             modifier = Modifier.fillMaxWidth()
         )
 
         OutlinedTextField(
             value = informe.año,
             onValueChange = { informe = informe.copy(año = it) },
-            label = { Text("Año") },
+            label = { Text(context.getString(R.string.Informe_screen_inf_year)) },
             modifier = Modifier.fillMaxWidth()
         )
 
         OutlinedTextField(
             value = informe.semestre,
             onValueChange = { informe = informe.copy(semestre = it) },
-            label = { Text("Semestre") },
+            label = { Text(context.getString(R.string.Informe_screen_inf_semester)) },
             modifier = Modifier.fillMaxWidth()
         )
 
         OutlinedTextField(
             value = informe.comentarios,
             onValueChange = { informe = informe.copy(comentarios = it) },
-            label = { Text("Comentarios") },
+            label = { Text(context.getString(R.string.Informe_screen_inf_comments)) },
             modifier = Modifier.fillMaxWidth()
         )
 
@@ -105,7 +105,7 @@ fun InformeForm(navController: NavController){
         OutlinedTextField(
             value = informe.archivo,
             onValueChange = { informe = informe.copy(archivo = it) },
-            label = { Text("URL o nombre del archivo") },
+            label = { Text(context.getString(R.string.Informe_screen_inf_URL)) },
             modifier = Modifier.fillMaxWidth()
         )
 
@@ -124,13 +124,13 @@ fun InformeForm(navController: NavController){
                 contentColor = Color.White
             )
         ) {
-            Text("Guardar Informe")
+            Text(context.getString(R.string.Informe_screen_inf_save))
         }
 
         Spacer(modifier = Modifier.height(8.dp))
 
         IconButton(onClick = { navController.popBackStack() }) {
-            Icon(Icons.AutoMirrored.Filled.ExitToApp, contentDescription = "Volver")
+            Icon(Icons.AutoMirrored.Filled.ExitToApp, contentDescription = context.getString(R.string.content_description_icon_back))
         }
     }
 }

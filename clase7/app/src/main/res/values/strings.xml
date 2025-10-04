@@ -20,6 +20,19 @@
     <string name="login_screen_to_users">Ir a usuarios</string>
     <string name="login_screen_to_informe">Ir a informes</string>
 
+    <string name="Informe_screen_informes">Informes</string>
+    <string name="Informe_screen_inf_new_informe">Nuevo Informe</string>
+    <string name="Informe_screen_inf_save">Guardar Informe</string>
+    <string name="Informe_screen_inf_save_success">Informe guardado correctamente</string>
+    <string name="Informe_screen_inf_list">Listado de Informes</string>
+    <string name="Informe_screen_inf_course">Curso</string>
+    <string name="Informe_screen_inf_year">Listado de Informes</string>
+    <string name="Informe_screen_inf_semester">Listado de Informes</string>
+    <string name="Informe_screen_inf_date">Listado de Informes</string>
+    <string name="Informe_screen_inf_comments">Listado de Informes</string>
+    <string name="Informe_screen_inf_attachment">Listado de Informes</string>
+    <string name="Informe_screen_inf_URL">URL o nombre del archivo</string>
+
     <string name="user_screen_new_user">Nuevo usuario</string>
     <string name="user_screen_tittle">Usuarios</string>
 
@@ -41,10 +54,12 @@
     <string name="user_form_screen_email">Email</string>
 
     <string name="content_description_icon_exit">Icon register</string>
+    <string name="content_description_icon_back">Volver</string>
     <string name="content_description_icon_person">User icon</string>
     <string name="content_description_icon_email">Email icon</string>
     <string name="content_description_icon_password">Password icon</string>
     <string name="content_description_icon_confirm_password">Confirm password icon</string>
     <string name="content_description_icon_add">Add icon</string>
+    <string name="content_description_icon_add_informe">Nuevo Informe</string>
 
 </resources>

@@ -73,12 +73,12 @@ fun InformesScreen(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Informes") },
+                title = { Text(stringResource(R.string.Informe_screen_informes)) },
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ExitToApp,
-                            contentDescription = "Salir"
+                            contentDescription = stringResource(R.string.content_description_icon_exit)
                         )
                     }
                 }
@@ -92,7 +92,7 @@ fun InformesScreen(navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Spacer(modifier = Modifier.padding(8.dp))
-            Text("Listado de Informes")
+            Text(stringResource(R.string.Informe_screen_inf_list))
 
             if (isLoading) {
                 CircularProgressIndicator()
@@ -137,7 +137,7 @@ fun InformesScreen(navController: NavController) {
                 }) {
                     Icon(
                         imageVector = Icons.Filled.Add,
-                        contentDescription = "Nuevo Informe",
+                        contentDescription = stringResource(R.string.content_description_icon_add_informe),
                         modifier = Modifier.size(50.dp),
                     )
                 }
