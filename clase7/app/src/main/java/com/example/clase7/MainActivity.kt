@@ -64,6 +64,8 @@ fun MainScreens() {
         composable(context.getString(R.string.screen_log_success)) { SuccessScreen(navController) }
         composable(context.getString(R.string.screen_users)) {UserScreen(navController)}
         composable(context.getString(R.string.screen_users_form)) {UsersFormScreen(navController)}
+        composable(context.getString(R.string.screen_Informes)) {InformesScreen(navController)}
+        composable(context.getString(R.string.screen_informes_form)) {InformeForm(navController)}
     }
 }
 

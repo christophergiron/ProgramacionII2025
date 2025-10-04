@@ -49,6 +49,7 @@ fun UsersFormScreen(navController: NavController){
     val auth = Firebase.auth
 
     val context = LocalContext.current
+
     fun saveUser(db: FirebaseFirestore, user: User, navController: NavController) {
         db.collection(USERS_COLLECTION)
             .add(user)
@@ -119,7 +120,7 @@ fun UsersFormScreen(navController: NavController){
                 ){
                     Checkbox(
                         checked = selectedOptions.contains(option),
-                        onCheckedChange = null // null recommended for accessibility with selectable modifier
+                        onCheckedChange = null
                     )
                     Text(
                         text = option,
@@ -136,10 +137,10 @@ fun UsersFormScreen(navController: NavController){
                 val user = User("", stateEmail, roles)
                 saveUser(db, user, navController)
 
-                auth.createUserWithEmailAndPassword(stateEmail, statePassword)
+                auth.createUserWithEmailAndPassword (stateEmail, statePassword)
                     .addOnCompleteListener(activity) { task ->
                         if (task.isSuccessful) {
-                            Toast.makeText(activity, context.getString(R.string.register_screen_success), Toast.LENGTH_SHORT)
+                            Toast.makeText(activity, context.getString(R.string.screen_Informes), Toast.LENGTH_SHORT)
                                 .show()
                         } else {
                             Toast.makeText(

@@ -87,6 +87,11 @@ fun SuccessScreen(navController: NavController){
             }, modifier = Modifier.padding(10.dp)){
                 Text(stringResource(R.string.login_screen_to_users))
             }
+            Button(onClick={
+                navController.navigate(context.getString(R.string.screen_Informes))
+            }, modifier = Modifier.padding(10.dp)){
+                Text(stringResource(R.string.login_screen_to_informe))
+            }
         }
     }
 }
