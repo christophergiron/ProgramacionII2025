@@ -42,9 +42,7 @@ import com.google.firebase.auth.auth
 
 @Composable
 fun LoginScreen(navController: NavController){
-
     val context = LocalContext.current
-
     val auth = Firebase.auth
 
     var stateEmail by remember {mutableStateOf("")}
@@ -135,7 +133,7 @@ fun LoginScreen(navController: NavController){
                         .addOnCompleteListener (activity) {
                                 task ->
                             stateMessage = if (task.isSuccessful){
-                                navController.navigate(context.getString(R.string.screen3))
+                                navController.navigate(context.getString(R.string.screen_log_success))
                                 context.getString(R.string.placeholder_text)
                             } else {
                                 context.getString(R.string.login_screen_fail)
@@ -159,7 +157,7 @@ fun LoginScreen(navController: NavController){
             text = stateMessage
         )
         Button(
-            onClick = {navController.navigate(context.getString(R.string.screen2))},
+            onClick = {navController.navigate(context.getString(R.string.screen_register))},
             colors =ButtonDefaults.buttonColors(
                 containerColor = Color(0xFFEAB1A7),
                 contentColor = Color.White

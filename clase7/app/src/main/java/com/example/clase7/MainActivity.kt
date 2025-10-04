@@ -49,21 +49,21 @@ fun MainScreens() {
 
     val navController = rememberNavController()
 
-    var initialScreen: String = stringResource(R.string.screen1)
+    var initialScreen: String = stringResource(R.string.screen_login)
 
     val auth = Firebase.auth
     val currentUser = auth.currentUser
 
     if (currentUser != null){
-        initialScreen = stringResource(R.string.screen1)
+        initialScreen = stringResource(R.string.screen_log_success)
     }
 
     NavHost(navController = navController, startDestination = initialScreen) {
-        composable(context.getString(R.string.screen1)) { LoginScreen(navController) }
-        composable(context.getString(R.string.screen2)) { RegisterScreen(navController) }
-        composable(context.getString(R.string.screen3)) { SuccessScreen(navController) }
-        composable(context.getString(R.string.screen4)) {UserScreen(navController)}
-        composable(context.getString(R.string.screen5)) {UsersFormScreen(navController)}
+        composable(context.getString(R.string.screen_login)) { LoginScreen(navController) }
+        composable(context.getString(R.string.screen_register)) { RegisterScreen(navController) }
+        composable(context.getString(R.string.screen_log_success)) { SuccessScreen(navController) }
+        composable(context.getString(R.string.screen_users)) {UserScreen(navController)}
+        composable(context.getString(R.string.screen_users_form)) {UsersFormScreen(navController)}
     }
 }
 

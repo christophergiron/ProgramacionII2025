@@ -24,11 +24,11 @@
 
     <string name="user_form_screen_save">Guardar</string>
 
-    <string name="screen1">login</string>
-    <string name="screen2">register</string>
-    <string name="screen3">logSuccess</string>
-    <string name="screen4">users</string>
-    <string name="screen5">users_form</string>
+    <string name="screen_login">login</string>
+    <string name="screen_register">register</string>
+    <string name="screen_log_success">logSuccess</string>
+    <string name="screen_users">users</string>
+    <string name="screen_users_form">users_form</string>
 
     <string name="login_screen_validation_email_empty">El email es requerido</string>
     <string name="login_screen_validation_email_invalid">El email es invalido</string>

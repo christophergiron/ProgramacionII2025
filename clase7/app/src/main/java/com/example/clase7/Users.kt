@@ -1,6 +1,9 @@
 package com.example.clase7
 
 
+import android.app.Activity
+import android.widget.Toast
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -106,7 +109,12 @@ fun UserScreen(navController: NavController) {
                             Card(
                                 modifier = Modifier
                                     .padding(8.dp)
-                                    .fillMaxWidth(),
+                                    .fillMaxWidth()
+                                    .clickable(onClick= {
+                                        navController
+                                            .navigate(context.getString(R.string.screen_users_form))
+                                    })
+                                ,
                                 elevation = CardDefaults.cardElevation(4.dp)
                             ) {
                                 Row(
@@ -131,7 +139,7 @@ fun UserScreen(navController: NavController) {
                     .padding(16.dp)
             )
             {
-             IconButton(onClick = {navController.navigate(context.getString(R.string.screen5))})
+             IconButton(onClick = {navController.navigate(context.getString(R.string.screen_users_form))})
                 {
                   Icon(
                      imageVector = Icons.Filled.Add,
