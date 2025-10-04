@@ -1,5 +1,6 @@
 package com.example.clase7
 
+import android.app.Activity
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -33,6 +34,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalView
 import androidx.navigation.NavController
 import com.example.clase7.models.User
 import com.google.firebase.Firebase
@@ -56,10 +58,13 @@ fun UsersFormScreen(navController: NavController){
     }
     var stateEmail by remember {mutableStateOf("")}
     var stateRoles by remember {mutableStateOf("")}
+    var statePassword by remember {mutableStateOf("")}
 
     var stateMessage by remember {mutableStateOf("")}
 
     var selectedOptions = remember {mutableStateListOf<String>()}
+
+    val activity = LocalView.current.context as Activity
 
     val db = Firebase.firestore
 
@@ -131,8 +136,6 @@ fun UsersFormScreen(navController: NavController){
                 val user = User("", stateEmail, roles)
                 saveUser(db, user, navController)
 
-                auth.createUserWithEmailAndPassword()
-
                 auth.createUserWithEmailAndPassword(stateEmail, statePassword)
                     .addOnCompleteListener(activity) { task ->
                         if (task.isSuccessful) {
@@ -146,8 +149,6 @@ fun UsersFormScreen(navController: NavController){
                             ).show()
                         }
                     }
-
-
             },
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color(0xFFC9252B),
